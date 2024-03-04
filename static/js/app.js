@@ -81,14 +81,18 @@ function bubbleChart(sample){
             marker: {
                 size: sampleValues,
                 color: otuIds,
-            }
+                colorscale: "Earth",
+            },
         };
 
         let layout = {
             title: "Bacteria Frequency Per Sample",
             xaxis: {title: 'OTU ID'},
-            yaxis: {title: 'Number of Bacteria'}
+            yaxis: {title: 'Number of Bacteria'},
+            height: 600,
+            width: 1400
         };
+        
         Plotly.newPlot("bubble", [bubbleTrace], layout);
     });
 };
